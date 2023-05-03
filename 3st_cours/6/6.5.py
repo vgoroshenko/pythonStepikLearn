@@ -51,10 +51,15 @@ def best_sender(messages, senders):
     tmp = defaultdict(list)
     for i in lst:
         tmp[i[0]].append(len(i[1].split()))
-    return tmp
+    return max(sorted(tmp.items(), key=lambda x: len(x[0]), reverse=True), key=lambda x: sum(x[1]))[0]
 
 messages = ['Hi, Linda', 'Hi, Sam', 'How are you doing?']
 senders = ['Sam Fisher', 'Linda', 'Sam Fisher']
+
+print(best_sender(messages, senders))
+
+messages = ['How is Stepik for everyone', 'Stepik is useful for practice']
+senders = ['Bob', 'Charlie']
 
 print(best_sender(messages, senders))
 
