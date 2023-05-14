@@ -1,8 +1,7 @@
 # from collections import Counter
 #
 # print(Counter(input().lower().split()).most_common()[0][0])
-
-
+import json
 # from collections import Counter
 #
 # txt = Counter(input().lower().split()).most_common()
@@ -62,6 +61,45 @@
 # languages = ['java', 'java', 'python', 'C++', 'assembler', 'java', 'C++', 'C', 'pascal', 'C++', 'pascal', 'java']
 #
 # print_bar_chart(languages, '#')
+
+# from collections import Counter
+# import csv
+# import json
+#
+# asd = {}
+#
+# for i in range(4):
+#     with open(f'quarter{i + 1}.csv', 'r', encoding='utf-8') as f:
+#         file = csv.DictReader(f)
+#         for row in file:
+#             asd.update(row)
+#             if i == 3:
+#                 print(Counter(asd).total())
+#                 print(asd)
+#         print(asd)
+#     print(file)
+#print(asd)
+
+
+# from collections import Counter, defaultdict
+#
+# books_count = Counter(defaultdict(int))
+# for i in input().split():
+#     books_count[i] += 1
+#
+# summ = 0
+# for j in range(int(input())):
+#     book = input().split()
+#     if books_count[book[0]] != 0:
+#         books_count.subtract(Counter({book[0] : 1}))
+#         summ += int(book[1])
+#
+# print(summ)
+
+
+
+
+
 
 
 
