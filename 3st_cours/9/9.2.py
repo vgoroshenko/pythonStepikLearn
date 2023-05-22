@@ -45,3 +45,39 @@ from collections import defaultdict
 # print(result)
 
 
+# txt = eval(input())
+#
+# if isinstance(txt, list):
+#     print(txt[-1])
+# elif isinstance(txt, set):
+#     print(len(txt))
+# else:
+#     print(txt[0])
+
+
+# import sys
+#
+# print(max([eval(i) for i in sys.stdin]))
+
+
+func = input()
+digits = input().split()
+
+tmp = [eval(func.replace('x', f'({i})')) for i in [i for i in range(int(digits[0]), int(digits[1]) + 1)]]
+
+print(tmp)
+
+print(f'Минимальное значение функции {func} на отрезке [{digits[0]}; {digits[1]}] равно {min(tmp)}')
+print(f'Максимальное значение функции {func} на отрезке [{digits[0]}; {digits[1]}] равно {max(tmp)}')
+
+
+
+
+
+
+
+
+
+
+
+
