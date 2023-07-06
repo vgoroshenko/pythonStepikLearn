@@ -48,31 +48,32 @@
 # print(account.get_balance())
 
 
-def check_name(name: str):
-    if isinstance(name, str) and name.isalpha() and len(name):
-        return name
-    else:
-        raise ValueError('Некорректное имя')
-
-def check_age(age: int):
-    if isinstance(age, int) and age in range(0, 111):
-        return age
-    else:
-        raise ValueError('Некорректный возраст')
 class User:
     def __init__(self, name, age):
-        self._name = check_name(name)
-        self._age = check_age(age)
+        self._name = self.check_name(name)
+        self._age = self.check_age(age)
+
+    def check_name(self, name: str):
+        if isinstance(name, str) and name.isalpha() and len(name):
+            return name
+        else:
+            raise ValueError('Некорректное имя')
+
+    def check_age(self, age: int):
+        if isinstance(age, int) and age in range(0, 111):
+            return age
+        else:
+            raise ValueError('Некорректный возраст')
 
     def get_name(self):
         return self._name
 
     def set_name(self, new_name):
-        check_name(new_name)
+        self.check_name(new_name)
         self._name = new_name
 
     def set_age(self, new_age):
-        check_age(new_age)
+        self.check_name(new_age)
         self._age = new_age
 
     def get_age(self):
